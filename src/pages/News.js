@@ -16,7 +16,7 @@ const News = {
                 </div>
             </div>`
 
-        ))
+        )).join('')
         }</div>`,
 
     // render: function () {

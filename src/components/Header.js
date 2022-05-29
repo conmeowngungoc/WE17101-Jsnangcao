@@ -1,5 +1,5 @@
 import Nav from "./Nav";
- const HeaderB ={
+ const Header ={
    render:()=>
    `<header class="p-3 bg-dark text-white">
    <div class="container">
@@ -11,7 +11,7 @@ import Nav from "./Nav";
        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
          <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
          <li><a href="/news" class="nav-link px-2 text-white">News</a></li>
-         <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+         <li><a href="/students" class="nav-link px-2 text-white">Student</a></li>
          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
          <li><a href="/about" class="nav-link px-2 text-white">About</a></li>
        </ul>
@@ -30,18 +30,4 @@ import Nav from "./Nav";
  }
 
 
-export const Header = {
-    // render: function () {
-    //     return '<div>Header Components</div>';
-    // }
-    // render: () =>('<div>Header Components</div>')
-    render: (name = 'WE17101') => (
-        `<div>
-            <h1>${name}</h1>
-            <div>${Nav.reder()}</div>
-        </div>`
-    )
-    // sau mũi tên là ngoặc tròn -> return kết quả
-};
-
-export default HeaderB;
+export default Header;
