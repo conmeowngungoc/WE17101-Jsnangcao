@@ -12,7 +12,7 @@ import Nav from "./Nav";
          <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
          <li><a href="/news" class="nav-link px-2 text-white">News</a></li>
          <li><a href="/students" class="nav-link px-2 text-white">Student</a></li>
-         <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+         <li><a href="/products" class="nav-link px-2 text-white">Product</a></li>
          <li><a href="/about" class="nav-link px-2 text-white">About</a></li>
        </ul>
 
