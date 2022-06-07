@@ -1,5 +1,5 @@
 import { getProduct } from "../api/products";
-
+import { formatMoney, formatStatus } from "../helpers/format";
 const ProductDetail = {
     render: async (id) => {
         const response = await getProduct(id);
@@ -10,7 +10,8 @@ const ProductDetail = {
                 <div>ID: ${data.id}</div>
                 <div>Name: ${data.name}</div>
                 <div>Description: ${data.description}</div>
-                <div>Status: ${data.status}</div>
+                <div> Price: ${formatMoney(data.price)}</div>
+                <div> status: ${formatStatus(data.status)}</div>
             </div>`
         );
     }

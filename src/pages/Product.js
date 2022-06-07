@@ -16,7 +16,7 @@ const Product = {
                         <div>Price:${product.price}</div>
                         <div>Status:${product.status}</div>
                         <div>
-                            <a href="/products/${product.id}">
+                            <a href="/products/detail/${product.id}">
                                 <button class='btn btn-info'>Chi tiet</button>
                             </a>
                             <button

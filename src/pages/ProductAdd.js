@@ -1,5 +1,5 @@
 import { createProduct } from "../api/products";
-
+import router from "../helpers/router";
 const ProductAdd = {
     render: () => {
         return (
@@ -22,7 +22,7 @@ const ProductAdd = {
 
                         <select name="status" id="status">
                             <option value="1">Hiện</option>
-                            <option value="0 sswszsss">Ẩn</option>
+                            <option value="0">Ẩn</option>
                         </select>
                     </div>
                     <div class='form-group'>
@@ -49,7 +49,7 @@ const ProductAdd = {
             // createStudent(submitData);
             console.log(submitData);
             await createProduct (submitData);
-            window.location.replace('/products');
+            router.navigate('/products');
         });
     }
 };
