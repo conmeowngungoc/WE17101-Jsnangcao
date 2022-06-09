@@ -6,7 +6,7 @@ const Cart = {
             cartItemsValue += cartItem.value;
         });
 
-        return `<span>GH: ${cartItemsValue}</span>`
+        return `<span>Số lượng hàng trong giỏ: ${cartItemsValue}</span>`
     }
 };
 

@@ -11,6 +11,7 @@ import StudentAdd from './pages/StudentAdd';
 import Product from './pages/product';
 import ProductDetail from './pages/ProductDetail';
 import ProductAdd from './pages/ProductAdd';
+import CartDetail from './pages/CartDetail';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -18,6 +19,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // const router = new Navigo('/', { linksSelector: 'a' });
 
 import router from "./helpers/router";
+
 const render = async (content, id) => {
     // content sẽ là toàn bộ component
     // cần thêm tham số vào hàm này để truyền id cho những phần detail
@@ -42,6 +44,7 @@ router.on({
     '/products': () => render(Product),
     '/products/add': () => render(ProductAdd), 
     '/products/detail/:id': (data) => render(ProductDetail, data.data.id),
+    '/cart-detail':()=> render(CartDetail)
 });
 router.resolve();
 
