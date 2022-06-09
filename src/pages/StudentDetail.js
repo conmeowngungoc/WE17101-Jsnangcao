@@ -1,5 +1,6 @@
 import { getStudent } from "../api/student";
-
+import reRender from "../helpers/reRender";
+import Cart from "../components/Cart";
 const StudentDetail = {
     render: async (id) => {
         const response = await getStudent(id);
@@ -31,7 +32,30 @@ const StudentDetail = {
                 name: btnAddCart.dataset.name,
                 value: +document.querySelector('#cartValue').value || 1
             };
-            console.log(item);
+            // lưu trữ vào localStorage: setItem(key, giá trị bắt buộc là 1 chuỗi)
+            // 1. Xem giỏ hàng đã có gì chưa
+            const cartItemsString = localStorage.getItem('cart');
+            // Nếu chưa có gì thì giá trị là '[]' ->[]
+            const cartItems =JSON.parse(cartItemsString||'[]');
+            // 2. Nếu chưa có gì thì push luôn sinh viên vào
+            if(!cartItems.length){
+                cartItems.push(item);
+            }
+            else{
+            // 2.1. KIểm tra xem có phần tử vào giống trong giỏ hàng chưa
+                const existItem = cartItems.find((cartItem)=>cartItem.id=== item.id);
+                if (existItem) {
+                    existItem.value += item.value;
+                }
+                else{
+                    cartItems.push(item);
+                }
+            }
+            // 3. Set giá trị mới cho giỏ hàng
+            localStorage.setItem('cart',JSON.stringify(cartItems));
+            // console.log(cartItems);
+           
+            reRender('#cart', Cart);
         });
     }
 };

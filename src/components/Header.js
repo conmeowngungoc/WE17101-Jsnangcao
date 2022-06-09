@@ -1,3 +1,4 @@
+import Cart from "./Cart";
 import Nav from "./Nav";
  const Header ={
    render:()=>
@@ -15,7 +16,7 @@ import Nav from "./Nav";
          <li><a href="/products" class="nav-link px-2 text-white">Product</a></li>
          <li><a href="/about" class="nav-link px-2 text-white">About</a></li>
        </ul>
-
+          <div id="cart"> ${Cart.render()}</div>
        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
          <input type="search" class="form-control form-control-dark text-white bg-dark" placeholder="Search..." aria-label="Search">
        </form>
